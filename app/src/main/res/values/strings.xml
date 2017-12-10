@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GymTrainning</string>
+    <string name="tipo_treino">Selecione o seu tipo de treino</string>
+    <string name="treino_1">Nome do Treino1</string>
+</resources>
