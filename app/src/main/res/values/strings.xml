@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">GymTrainning</string>
-    <string name="tipo_treino">Selecione o seu tipo de treino</string>
-    <string name="treino_1">Nome do Treino1</string>
+    <string name="tipo_treino">Treinos Do Exercicio</string>
+    <string name="nome_exercicio">Nome Exercicio1</string>
+    <string name="descricao_exercicio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Pellentesque posuere imperdiet odio. Sed malesuada ultricies eros id congue.
+        Morbi quis mi non velit ultrices pretium in id metus. Phasellus ultrices tellus est,
+        non bibendum lectus feugiat vitae. Mauris dictum et ligula vitae iaculis.
+        Proin eu nisl non arcu dignissim sodales sit amet vel nulla. Fusce tincidunt dignissim massa,
+        at imperdiet quam laoreet vitae. Maecenas vitae congue elit. Pellentesque tincidunt diam nec arcu auctor hendrerit.
+        Donec rutrum dolor felis, pulvinar gravida nibh imperdiet id.
+    </string>
+
 </resources>
