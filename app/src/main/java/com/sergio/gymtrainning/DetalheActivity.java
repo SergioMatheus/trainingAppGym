@@ -24,10 +24,12 @@ public class DetalheActivity extends AppCompatActivity{
         TextView descricao = (TextView)
                 findViewById(R.id.textView1);
 
-        Glide.with(this)
-                .load(R.drawable.supino_deitado)
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imagem);
+        if(exercicio.getCategoria()==Categoria.SUPINO_RETO){
+            Glide.with(this)
+                    .load(R.drawable.supino_deitado)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(imagem);
+        }
 
         nomeExercicio.setText(exercicio.getNomeExercicio());
         descricao.setText(exercicio.getDescricao());

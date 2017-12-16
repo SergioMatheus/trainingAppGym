@@ -7,12 +7,21 @@ public class Exercicio implements Serializable {
     private String _id;
     private String nomeExercicio;
     private String descricao;
-    private String url;
+    private Categoria categoria;
 
-    public Exercicio(String id, String nomeExercicio, String descricao) {
-        this._id = id;
+    public Exercicio(String _id, String nomeExercicio, String descricao, Categoria categoria) {
+        this._id = _id;
         this.nomeExercicio = nomeExercicio;
         this.descricao = descricao;
+        this.categoria = categoria;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public String getNomeExercicio() {
@@ -31,14 +40,6 @@ public class Exercicio implements Serializable {
         this.descricao = descricao;
     }
 
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
 
     public String get_id() {
         return _id;

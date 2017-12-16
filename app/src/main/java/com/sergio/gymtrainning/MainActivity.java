@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     "\n" +
                     "Este exercício é a chave para trabalhar a parte superior do corpo, assim como para esculpir uma caixa torácica larga e atlética. " +
                     "O press de peito é muito perto do movimento anatômico executado ao fazer flexões no chão; sem dúvida, o uso de barra e/ou halteres no primeiro" +
-                    " caso permite levantar maior peso adicional.");
+                    " caso permite levantar maior peso adicional.",Categoria.SUPINO_RETO);
             exercicio.insert(e);
 
         }
