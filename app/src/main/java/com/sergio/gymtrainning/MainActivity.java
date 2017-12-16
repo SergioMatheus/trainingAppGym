@@ -1,5 +1,6 @@
 package com.sergio.gymtrainning;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -30,19 +31,24 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) this.findViewById(R.id.textView1);
         textView.setText(R.string.tipo_treino);
 
+        ExercicioDao exercicio = new ExercicioDao(new Banco(this));
 
-        List<Exercicio> lista = new ArrayList<>();
-        Cursor c = bd.getReadableDatabase().query("filmes", new String[]{"id,nomeExercicio,descricao,imagem"}, null, null, null, null, null);
-        if (c.moveToNext()) {
-            c.moveToFirst();
-            do {
-                Exercicio f = new Exercicio(c.getString(0), c.getString(1), c.getString(2), c.getString(3));
-                lista.add(f);
-            } while (c.moveToNext());
-            bd.getWritableDatabase().close();
+        if (exercicio.listar().isEmpty()){
+            Exercicio e = new Exercicio("10","Supino Reto","O press de peito deitado sobre o banco (o supino reto) " +
+                    "é um dos cinco exercícios básicos, isto é, aqueles movimentos que mais efetivamente trabalham toda a musculatura corporal em conjunto. " +
+                    "Os músculos trabalhados principalmente ao executar este exercício são os peitorais, embora os músculos secundários que participam sejam os ombros e os tríceps.\n" +
+                    "\n" +
+                    "Este exercício é a chave para trabalhar a parte superior do corpo, assim como para esculpir uma caixa torácica larga e atlética. " +
+                    "O press de peito é muito perto do movimento anatômico executado ao fazer flexões no chão; sem dúvida, o uso de barra e/ou halteres no primeiro" +
+                    " caso permite levantar maior peso adicional.");
+            exercicio.insert(e);
+
         }
 
-        ArrayAdapter adapter= new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,lista);
+        List<Exercicio> exercicios = exercicio.listar();
+
+
+        ArrayAdapter<Exercicio> adapter = new ArrayAdapter<Exercicio>(MainActivity.this, android.R.layout.simple_list_item_1, exercicios);
 
 
         ListView listView = (ListView) this.findViewById(R.id.list_item);
@@ -51,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent detalheActivity = new Intent(MainActivity.this,DetalheActivity.class);
+                Intent detalheActivity = new Intent(MainActivity.this, DetalheActivity.class);
                 detalheActivity.putExtra("exercicio", (Serializable) adapterView.getItemAtPosition(position));
                 startActivity(detalheActivity);
             }

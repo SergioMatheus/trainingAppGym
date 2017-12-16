@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 public class DetalheActivity extends AppCompatActivity{
 
     @Override
@@ -21,9 +24,11 @@ public class DetalheActivity extends AppCompatActivity{
         TextView descricao = (TextView)
                 findViewById(R.id.textView1);
 
-        int imagemInt = Integer.parseInt(exercicio.getImagem());
+        Glide.with(this)
+                .load(R.drawable.supino_deitado)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imagem);
 
-        imagem.setImageResource(imagemInt);
         nomeExercicio.setText(exercicio.getNomeExercicio());
         descricao.setText(exercicio.getDescricao());
     }

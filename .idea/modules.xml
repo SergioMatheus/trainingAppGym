@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/trainingAppGym.iml" filepath="$PROJECT_DIR$/trainingAppGym.iml" />
+      <module fileurl="file://C:\Users\Pichau\AndroidStudioProjects\trainingAppGym\trainingAppGym2.iml" filepath="C:\Users\Pichau\AndroidStudioProjects\trainingAppGym\trainingAppGym2.iml" />
     </modules>
   </component>
 </project>

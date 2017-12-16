@@ -1,20 +1,18 @@
 package com.sergio.gymtrainning;
 
-public class Exercicio {
+import java.io.Serializable;
 
-    private String id;
+public class Exercicio implements Serializable {
+
+    private String _id;
     private String nomeExercicio;
     private String descricao;
-    private String imagem;
+    private String url;
 
-    public Exercicio() {
-    }
-
-    public Exercicio(String id, String nomeExercicio, String descricao, String imagem) {
-        this.id = id;
+    public Exercicio(String id, String nomeExercicio, String descricao) {
+        this._id = id;
         this.nomeExercicio = nomeExercicio;
         this.descricao = descricao;
-        this.imagem = imagem;
     }
 
     public String getNomeExercicio() {
@@ -34,19 +32,25 @@ public class Exercicio {
     }
 
 
-    public String getImagem() {
-        return imagem;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getId() {
-        return id;
+    public String get_id() {
+        return _id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+
+    @Override
+    public String toString() {
+        return nomeExercicio;
     }
 }

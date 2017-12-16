@@ -10,8 +10,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="194dp"
-        app:srcCompat="@drawable/placeholder" />
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/imagem_inicial" />
 
     <LinearLayout
         android:layout_width="match_parent"
