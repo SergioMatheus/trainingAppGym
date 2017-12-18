@@ -2,6 +2,7 @@ package com.sergio.gymtrainning;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,9 @@ public class ExercicioDao {
 
     public void insert(Exercicio exercicio) {
         ContentValues values = new ContentValues();
+        values.put(Banco.COL_ID, exercicio.get_id());
         values.put(Banco.COL_NOME_EXERCICIO, exercicio.getNomeExercicio());
+        values.put(Banco.COL_DESCRICAO, exercicio.getDescricao());
         values.put(Banco.COL_DESCRICAO, exercicio.getDescricao());
         bd.getWritableDatabase().insert("EXERCICIOS", null, values);
         bd.getWritableDatabase().close();
@@ -25,11 +28,11 @@ public class ExercicioDao {
     public List<Exercicio> listar() {
         List<Exercicio> lista = new ArrayList<>();
 
-        Cursor c = bd.getReadableDatabase().query("EXERCICIOS", new String[]{"_id,nome_exercicio,descricao"}, null, null, null, null, null);
+        Cursor c = bd.getReadableDatabase().query("EXERCICIOS", new String[]{"_id,nome_exercicio,descricao,url"}, null, null, null, null, null);
         if (c.moveToNext()) {
             c.moveToFirst();
             do {
-                Exercicio f = new Exercicio(c.getString(0), c.getString(1), c.getString(2));
+                Exercicio f = new Exercicio(c.getString(0), c.getString(1), c.getString(2),c.getString(3));
                 lista.add(f);
             } while (c.moveToNext());
             bd.getWritableDatabase().close();
