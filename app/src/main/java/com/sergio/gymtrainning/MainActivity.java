@@ -22,8 +22,8 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
-    private Banco bd = new Banco(this);
     private Exercicio[] exercicios;
+    private Boolean verificar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView imagem = this.findViewById(R.id.imageView);
-        imagem.setImageResource(R.drawable.imagem_inicial);
+        imagem.setImageResource(R.drawable.imagem_inicial_splash);
 
         TextView textView = (TextView) this.findViewById(R.id.textView1);
         textView.setText(R.string.tipo_treino);
@@ -73,12 +73,18 @@ public class MainActivity extends AppCompatActivity {
                         Gson gson = new GsonBuilder().create();
                         exercicios = gson.fromJson(responseString, Exercicio[].class);
                         adapter.clear();
+                        if(exercicio.listar().isEmpty()) {
+                            verificar = true;
+                        } else {
+                            verificar = false;
+                        }
                         for (Exercicio exercicio1 : exercicios) {
                             adapter.add(exercicio1);
-                            if (exercicio.listar().isEmpty()) {
+                            if (verificar) {
                                 exercicio.insert(exercicio1);
                             }
                         }
+                        verificar=false;
                     }
                 });
 

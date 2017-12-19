@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">GymTrainning</string>
-    <string name="tipo_treino">Treinos Do Exercicio</string>
+    <string name="tipo_treino">Lista de Exercicio</string>
     <string name="nome_exercicio">Nome Exercicio1</string>
     <string name="descricao_exercicio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Pellentesque posuere imperdiet odio. Sed malesuada ultricies eros id congue.

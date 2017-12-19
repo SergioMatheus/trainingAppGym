@@ -16,8 +16,6 @@ public class DetalheActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detalhe_activity);
 
-        Intent intent = DetalheActivity.this.getIntent();
-
         Exercicio exercicio = (Exercicio) getIntent().getSerializableExtra("exercicio");
 
 
