@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
 
     <ImageView
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/nome_exercicio"
+            android:textColor="@color/colorPrimary"
             android:textAlignment="center"/>
 
         <TextView
@@ -33,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:text="@string/descricao_exercicio" />
+            android:text="@string/descricao_exercicio"
+            android:textColor="@color/colorFirebrick"/>
     </LinearLayout>
 
 </LinearLayout>

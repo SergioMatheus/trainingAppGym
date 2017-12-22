@@ -5,7 +5,8 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context="com.sergio.gymtrainning.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
 
     <ImageView
         android:id="@+id/imageView"
@@ -23,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tipo_treino"
+            android:textColor="@color/colorPrimary"
             android:textAlignment="center"/>
 
         <ListView
